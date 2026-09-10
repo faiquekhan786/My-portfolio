@@ -1,13 +1,9 @@
-import { FiDownload, FiArrowRight } from 'react-icons/fi'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FiArrowRight, FiDownload } from 'react-icons/fi'
+import { FaGithub } from 'react-icons/fa'
 import { SiLeetcode } from 'react-icons/si'
 
-const taglines = [
-  'React.js Developer',
-  'Full-Stack Builder',
-  'UI Craftsman',
-  'Problem Solver',
-]
+const RESUME_URL =
+  'https://raw.githubusercontent.com/faiquekhan786/faique-shareef-resume/main/faique%20shareef%20resume.pdf'
 
 export default function Hero() {
   return (
@@ -85,6 +81,33 @@ export default function Hero() {
               >
                 View My Work <FiArrowRight />
               </a>
+
+              {/* ── Resume Download Button ── */}
+              <a
+                href={RESUME_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Faique_Shareef_Resume.pdf"
+                className="btn"
+                style={{
+                  background: 'rgba(163, 190, 140, 0.12)',
+                  color: 'var(--accent-green)',
+                  border: '1px solid rgba(163, 190, 140, 0.3)',
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.background = 'rgba(163, 190, 140, 0.22)'
+                  e.currentTarget.style.transform = 'translateY(-2px)'
+                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(163, 190, 140, 0.18)'
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.background = 'rgba(163, 190, 140, 0.12)'
+                  e.currentTarget.style.transform = 'translateY(0)'
+                  e.currentTarget.style.boxShadow = 'none'
+                }}
+              >
+                <FiDownload size={15} /> Download Resume
+              </a>
+
               <a
                 href="#contact"
                 className="btn btn-outline"
@@ -139,7 +162,7 @@ export default function Hero() {
               <img
                 src="/profile.jpg"
                 alt="Faique Shareef – Web Developer"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', borderRadius: '50%' }}
               />
             </div>
 
